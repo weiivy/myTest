@@ -9,8 +9,9 @@ class regexTool
 {
     private $validate = [
         'required' => '/.+/',
-        'email' => '',
-        'url' => ''
+        'email' => '/^\w+(\.\w+)@(\.\w+)+$/',
+        'url' => '',
+        'qq' => '/\d{5,11}/'
     ];
 
     //匹配结果
@@ -81,7 +82,7 @@ class regexTool
      * 设置修正模式   在初始化时错过初始化修正模式时，可以在此设置
      * @param $fixMode
      */
-    public function setDixMode ($fixMode)
+    public function setFixMode ($fixMode)
     {
         $this->fixMode = $fixMode;
     }
